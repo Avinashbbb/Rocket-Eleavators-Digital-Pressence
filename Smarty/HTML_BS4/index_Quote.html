@@ -52,7 +52,10 @@
       rel="stylesheet"
       type="text/css"
       id="color_scheme"
-    />
+    /><!--My addition-->
+    
+    
+    <!--/My addition-->
   </head>
 
   <!--
@@ -283,9 +286,23 @@
         <!-- /Top Nav -->
       </div>
       <!--My content-->
-      <div>
-        <h1 style="color: blueviolet">Get a Quote now!!.</h1>
-      </div>
+      <section>
+      <!--prints heading-->
+        <div>
+          <h1>Get a Quote now!!.</h1>
+            <!--starting javascript part-->
+          <div id = "quote"><!--step 1-->
+            <label id="typeOfBuilding">Type of Building.</label>
+            <select id ="type_of_building">
+            <option>Please select one from below</option>
+            <option id ="residential">Residential</option>
+            <option id ="commercial">Commercial</option>
+            <option id ="corporate">Corporate</option>
+            <option id ="hybrid">Hybrid</option>
+            </select>
+          </div>
+        </div>
+      </section>
       <!--/My content-->
 
       <!--Footer-->
@@ -358,5 +375,10 @@
       </footer>
       <!-- /FOOTER -->
     </div>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+    </script>
+    <script type="text/javascript" src="Quote.js">
+    </script>
+    
   </body>
 </html>
