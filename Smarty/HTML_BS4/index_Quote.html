@@ -288,18 +288,78 @@
       <!--My content-->
       <section>
       <!--prints heading-->
-        <div>
+        <div class ="container" >
+          
           <h1>Get a Quote now!!.</h1>
+          <hr>
+
+          <div class ="row">
+          <div class = "col">
             <!--starting javascript part-->
-          <div id = "quote"><!--step 1-->
-            <label id="typeOfBuilding">Type of Building.</label>
+          <div id = "step_1"><!--step 1-->
+            
+            <label id="typeOfBuilding"><h2>Type of Building.</h2></label>
             <select id ="type_of_building">
             <option>Please select one from below</option>
-            <option id ="residential">Residential</option>
-            <option id ="commercial">Commercial</option>
-            <option id ="corporate">Corporate</option>
-            <option id ="hybrid">Hybrid</option>
+            <option id  ="residential" value = "residential">Residential</option>
+            <option id ="commercial" value = "commercial">Commercial</option>
+            <option id ="corporate" value = "corporate">Corporate</option>
+            <option id ="hybrid" value ="hybrid">Hybrid</option>
             </select>
+            
+          </div>
+          
+          <div id ="main">
+            <hr id = "line">
+            <h3 id = "res_selected">You selected Resedential</h3>
+            <h3 id = "com_selected">You selected Commercial</h3>
+            <h3 id = "cor_selected">You selected Corporate</h3>
+            <h3 id = "hyb_selected">You selected Hybrid</h3>
+            <!--questions-->
+            <div id = "number-of-appartments">
+            <label>Number of appartments in the building.</label>
+            <input required type = "number" id ="appartments" /> 
+            </div>
+            <div id = "number-of-floors">
+            <label>Number of floors in the building excluding basment.</label>
+            <input required type = "number" id ="floors"/>
+            </div>
+            <div id = "number-of-basments">
+            <label>Number of basments in the building.</label>
+            <input required type = "number" id = "basments"/>
+            </div>
+            <div id="number-of-companies">
+            <label>Number of distint business.</label>
+            <input required type = "number"id = "companies"/>
+            </div>
+            <div id = "number-of-parking-spots">
+            <label>Number of parking spaces available.</label>
+            <input required type = "number" id = "parking-spots"/>
+            </div>
+            <div id = "number-of-elvators">
+            <label>Number of elevator cags to be deployed</label>
+            <input required type = "number"id = "elvators"/>
+            </div>
+            <div id = "number-of-corporations">
+            <label>Number of seprate tenent companies.</label>
+            <input required type = "number" id = "corporations"/>
+            </div>
+            <div id = "maximum-occupancy">
+            <label>Maximum number of occupants per floor.</label>
+            <input required type = "number" id = "occupancy"/>
+            </div>
+            <div id = "business-hours">
+            <label>Number of hours of activity in th building(Please enter a value between 1 to 24.)</label>
+            <input required type = "number" id = "hours"/>
+            </div>
+          </div>
+          </div>
+          
+          <!--for the results-->
+          <div class="col" id = "hh">
+            <h4>Your estimated cost will apear here.</h4>
+            <h5 id ="service_charge">e</h5>
+          </div>
           </div>
         </div>
       </section>

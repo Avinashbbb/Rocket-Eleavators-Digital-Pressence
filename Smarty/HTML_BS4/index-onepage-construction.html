@@ -255,7 +255,7 @@
       </div>
 
       <!-- REVOLUTION SLIDER -->
-      <div class="slider fullwidthbanner-container roundedcorners">
+      <div class="slider fullwidthbanner-container roundedcorners" id = "home">
         <!--
 					Navigation Styles:
 					
@@ -1919,9 +1919,7 @@
               <!-- /Alert Mandatory -->
 
               <form
-                action="php/contact.php"
-                method="post"
-                enctype="multipart/form-data"
+                
               >
                 <fieldset>
                   <input type="hidden" name="action" value="contact_send" />
@@ -1966,7 +1964,7 @@
                     <div class="col-md-4">
                       <label for="contact:phone">Phone Number</label>
                       <input
-                        type="text"
+                        type="number"
                         value=""
                         class="form-control"
                         name="contact[phone]"
