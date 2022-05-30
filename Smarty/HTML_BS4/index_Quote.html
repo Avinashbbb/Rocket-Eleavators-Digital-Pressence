@@ -352,13 +352,91 @@
             <label>Number of hours of activity in th building(Please enter a value between 1 to 24.)</label>
             <input required type = "number" id = "hours"/>
             </div>
-          </div>
+          </div><!--remove-->
           </div>
           
           <!--for the results-->
-          <div class="col" id = "hh">
+          <div class = "container col" id = "results">
+          <div id = "select_service">
+            
+            <div class = "row " >
+              <h4>Please Select your Service Needed</h4>
+              </div>
+              <hr>
+              <div class ="row " >              
+                <div class="col">
+              <label ><h5>Standard</h5></label>
+              <input type = "radio" name = "type_of_Service" class = "standard" value="standard"  checked >
+              </div>
+              <div class = "col">
+              <label ><h5>Premium</h5></label>
+              <input type = "radio" name = "type_of_Service" class = "premium" value = "premium" > 
+              </div>
+              <div class = "col">
+              <label ><h5>Execelium</h5></label>
+              <input type = "radio" name = "type_of_Service" class = "execlium" value = "execelium"> 
+              </div>
+              </div>
+            </div>
+            <hr>
+
+            <div>
+              <!--empty to creat some space--><br><br>
+            </div>
+          <div class = "row">
             <h4>Your estimated cost will apear here.</h4>
-            <h5 id ="service_charge">e</h5>
+          </div>
+          <hr>
+            <!--results-->
+            <div id = "results">
+            <div class = "row">
+              <div class = "col">
+              <h5>No of Elevators Needed</h5>
+              </div>
+              <!--service charge for standard-->
+              <div class = "col">
+                <h5>Price Of One Elevator</h5>
+              </div>
+              <!--servis fes for standard-->
+              <div class = "col">
+                <h5>Total Price Of Elevators</h5>
+              </div>
+              <!--tolat cost for standard-->
+              <div class="col">
+                <h5>Installation Fees</h5>
+              </div>
+              <div class = "col">
+                <h5>Final Price Inclusive of Fees </h5>
+              </div>
+            </div>
+            </div>
+            <hr>
+
+            <!--numbers-->
+            <div class = "row">
+              <div class=" col">
+              <h5 id = "elevators_needed">0</h5>          
+              </div>
+            <div class=" col">
+              <h5 id = "one_elevator">0</h5>          
+              </div>
+              
+              <div class = "col">
+                <h5 id ="total_evevators">0</h5>
+              </div>
+              
+              <div class = "col">
+                <h5 id = "installation">0</h5>
+              </div>
+              
+              <div class = "col">
+                <h5 id = "final_price">0</h5>
+              </div>
+             </div>         
+            <hr>
+            
+        </div>
+            <hr>
           </div>
           </div>
         </div>
@@ -437,7 +515,7 @@
     </div>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
     </script>
-    <script type="text/javascript" src="Quote.js">
+    <script type="text/javascript" src= "Quote.js">
     </script>
     
   </body>
