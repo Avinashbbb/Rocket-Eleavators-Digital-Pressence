@@ -1,5 +1,18 @@
 $(document).ready(function(){ 
     hide_all();
+
+    $(document).change(()=>{
+        selectionOfBuilding();
+        $("#appartments").val();
+        $("#floors").val();
+        $("#basments").val();
+        $("#companies").val();
+        $("#parking-spots").val();
+        $("#elvators").val();
+        $("#corporations").val();
+        $("#occupancy").val();
+        $("#hours").val();
+    });
 });
 
 //declaring building
@@ -28,57 +41,71 @@ var final_price = 0;
 
 //declarations for thr input
 // let appartments = $("#appartments").on("input").value;
-let appartments =$("#appartments").on("input",function () { appartments = $(this).val();});
-let floors =  $("#floors").on("input",function () { floors = $(this).val();});
-let basments = $("#basments").on("input",function () { basments = $(this).val();});
-let companies = $("#companies").on("input",function () { companies = $(this).val();});
-let parking_spots = $("#parking-spots").on("input",function () { parking_spots = $(this).val();});
-let elvators = $("#elvators").on("input",function () { elvators = $(this).val();});
-let corparations = $("#corporations").on("input",function () { corparations = $(this).val();});
-let occupancy = $("#occupancy").on("input",function () { occupancy = $(this).val();});
-let hours = $("#hours").on("input",function () { hours = $(this).val();});
 
-//$("#appartments").on("input", function() {
-    //appartments = $(this).val();
-        //console.log(appartments);
-//});
+
+
 
 //console.log(residential,commercial,corporate,hybrid,select_Type_Of_Building)
 
 //function to select the type of building!!
-$("#type_of_building").on("change",function(){
+function selectionOfBuilding (){
     if($( "#type_of_building option:selected" ).text() == residential ){
         showRes();
         res_selected();
-        results();
-
     }else if($( "#type_of_building option:selected" ).text() == commercial){
         showCom();
         com_selected();
-        
     }else if($( "#type_of_building option:selected" ).text() == corporate){
         showCor();
         hyb_selected();
-        results();
-
     }else if($( "#type_of_building option:selected" ).text() == hybrid){
         showHyb();
         hyb_selected();
-        results();
     }
-})
+}
 
 //.on("input",()=>{console.log($("#res_appartment").val(),"a")});
 
 //Declaring function for the selected type of building
 //for commercial building
 function com_selected(){
+        mainCalculation($("#elvators").val());
+}
+function res_selected(){
+    let averageApp = $("#appartments").val()/$("#floors").val()
+    let noOnelevatorShafts = Math.ceil(averageApp/6)
+    let elevatorColom = Math.ceil($("#floors").val()/20)
+    function elevatorsNeeded(){
+            if ($("#floors").val()>20){
+            return ((elevatorColom*2)+noOnelevatorShafts);
+        }else{
+            return noOnelevatorShafts;
+        }
+    }
+    mainCalculation(elevatorsNeeded());
+}
+
+function hyb_selected (){
+    let noOfOccupents = Number($("#occupancy").val())*(Number($("#floors").val())+ Number($("#basments").val()));
+    let elevatorsRequried = noOfOccupents/1000;
+    console.log(`elevators requried ${elevatorsRequried}`)
+    let noOfColums = Math.ceil((Number($("#floors").val())+Number($("#basments").val()))/20);
+    console.log(`coll req${noOfColums}`)
+    let elevatorsPerColom = Math.ceil(elevatorsRequried/noOfColums);
+    let totalNoOfElevators = Math.ceil(elevatorsPerColom*noOfColums);
+
+    mainCalculation(totalNoOfElevators);
+}
+//restlts 
+function mainCalculation(input){
+    
     $("#select_service").on ("change", ()=> {
         var radios = document.getElementsByName("type_of_Service");
         var selected = Array.from(radios).find(radio => radio.checked);
         
         if (selected.value == "standard"){
-            elevators_needed = elvators;
+            console.log(input)
+            elevators_needed = input;
             one_elevator = 7565;
             total_evevators = 7565*elevators_needed;
             installation = (10/100)*total_evevators;
@@ -86,7 +113,7 @@ function com_selected(){
             results();
 
         }else if(selected.value == "premium") {
-            elevators_needed = elvators;
+            elevators_needed = input;
             one_elevator = 12345;
             total_evevators =12345*elevators_needed;
             installation =(13/100)*total_evevators;
@@ -94,43 +121,15 @@ function com_selected(){
             results();
 
         } else if (selected.value == "execelium"){
-            elevators_needed = elvators;
+            elevators_needed = input;
             one_elevator = 15400;
             total_evevators = 15400*elevators_needed;
             installation =(16/100)*total_evevators;
             final_price = installation+total_evevators;
             results();
         }
-    })
+    });
 }
-function res_selected(){
-    $("#select_service").on ("change", ()=> {
-        var radios = document.getElementsByName("type_of_Service");
-        var selected = Array.from(radios).find(radio => radio.checked);
-        if (selected.value == "standard"){
-            console.log("s")
-        }else if(selected.value == "premium") {
-            console.log("p")
-        } else if (selected.value == "execelium"){
-            console.log("e")
-        }
-    })
-}
-
-function hyb_selected (){
-    $("#select_service").on ("change", ()=> {
-        var radios = document.getElementsByName("type_of_Service");
-        var selected = Array.from(radios).find(radio => radio.checked);
-        if (selected.value == "standard"){
-            console.log("s")
-        }else if(selected.value == "premium") {
-            console.log("p")
-        } else if (selected.value == "execelium"){
-            console.log("e")
-        }
-    })
-}
-//restlts 
 function results(){
 $("#elevators_needed").html(elevators_needed),
 $("#one_elevator").html(one_elevator),
@@ -147,7 +146,7 @@ function showRes(){
     comSelected.hide(500);
     corpSelected.hide(500);
     hybridSelected.hide(500);
-    $("#results").show(900);
+    $("#results").show(1000);
     $("#number-of-appartments").show(1000);
     $("#number-of-floors").show(1000);
     $("#number-of-basments").show(1000);
@@ -165,7 +164,7 @@ function showCom(){
     resSlected.hide(500);
     corpSelected.hide(500);
     hybridSelected.hide(500);
-    $("#results").show(900);
+    $("#results").show(1000);
     $("#number-of-appartments").hide(500);
     $("#number-of-floors").show(1000);
     $("#number-of-basments").show(1000);
@@ -182,7 +181,7 @@ function showCor(){
     resSlected.hide(500);
     comSelected.hide(500);
     hybridSelected.hide(500);
-    $("#show").show(900);
+    $("#results").show(1000);
     $("#number-of-appartments").hide(500);
     $("#number-of-floors").show(1000);
     $("#number-of-basments").show(1000);

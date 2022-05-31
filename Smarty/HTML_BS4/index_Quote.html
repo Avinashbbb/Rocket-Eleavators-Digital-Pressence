@@ -318,39 +318,39 @@
             <!--questions-->
             <div id = "number-of-appartments">
             <label>Number of appartments in the building.</label>
-            <input required type = "number" id ="appartments" /> 
+            <input required type = "number" min="1" value="1" id ="appartments" /> 
             </div>
             <div id = "number-of-floors">
             <label>Number of floors in the building excluding basment.</label>
-            <input required type = "number" id ="floors"/>
+            <input required type = "number" min="1" id ="floors"/>
             </div>
             <div id = "number-of-basments">
             <label>Number of basments in the building.</label>
-            <input required type = "number" id = "basments"/>
+            <input required type = "number" min="0" id = "basments"/>
             </div>
             <div id="number-of-companies">
             <label>Number of distint business.</label>
-            <input required type = "number"id = "companies"/>
+            <input required type = "number" min="1" id = "companies"/>
             </div>
             <div id = "number-of-parking-spots">
             <label>Number of parking spaces available.</label>
-            <input required type = "number" id = "parking-spots"/>
+            <input required type = "number" min="0" id = "parking-spots"/>
             </div>
             <div id = "number-of-elvators">
             <label>Number of elevator cags to be deployed</label>
-            <input required type = "number"id = "elvators"/>
+            <input required type = "number" min="1" id = "elvators" />
             </div>
             <div id = "number-of-corporations">
             <label>Number of seprate tenent companies.</label>
-            <input required type = "number" id = "corporations"/>
+            <input required type = "number" min="1" id = "corporations"/>
             </div>
             <div id = "maximum-occupancy">
             <label>Maximum number of occupants per floor.</label>
-            <input required type = "number" id = "occupancy"/>
+            <input required type = "number" min="1" id = "occupancy"/>
             </div>
             <div id = "business-hours">
             <label>Number of hours of activity in th building(Please enter a value between 1 to 24.)</label>
-            <input required type = "number" id = "hours"/>
+            <input required type = "number" min="1" max="24" id = "hours"/>
             </div>
           </div><!--remove-->
           </div>
@@ -366,7 +366,7 @@
               <div class ="row " >              
                 <div class="col">
               <label ><h5>Standard</h5></label>
-              <input type = "radio" name = "type_of_Service" class = "standard" value="standard"  checked >
+              <input type = "radio" name = "type_of_Service" class = "standard" value="standard" >
               </div>
               <div class = "col">
               <label ><h5>Premium</h5></label>
