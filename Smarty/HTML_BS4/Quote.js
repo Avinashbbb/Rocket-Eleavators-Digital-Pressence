@@ -49,6 +49,8 @@ function selectionOfBuilding (){
     }else if($( "#type_of_building option:selected" ).text() == hybrid){
         showHyb();
         hyb_selected();
+    }else{
+        hide_all(900);
     }
 }
 
@@ -227,22 +229,22 @@ function showHyb(){
 //var fees = 10/standard*100
 //console.log( standard + fees )
     //hiding all  options
-    function hide_all(){
-        resSlected.hide();
-        comSelected.hide();
-        corpSelected.hide();
-        hybridSelected.hide();
-        $("#number-of-appartments").hide();
-        $("#number-of-floors").hide();
-        $("#number-of-basments").hide();
-        $("#number-of-companies").hide();
-        $("#number-of-parking-spots").hide();
-        $("#number-of-elvators").hide();
-        $("#number-of-corporations").hide();
-        $("#maximum-occupancy").hide();
-        $("#business-hours").hide();
-        $("#line").hide();
-        $("#results").hide();
+    function hide_all(hide){
+        resSlected.hide(hide);
+        comSelected.hide(hide);
+        corpSelected.hide(hide);
+        hybridSelected.hide(hide);
+        $("#number-of-appartments").hide(hide);
+        $("#number-of-floors").hide(hide);
+        $("#number-of-basments").hide(hide);
+        $("#number-of-companies").hide(hide);
+        $("#number-of-parking-spots").hide(hide);
+        $("#number-of-elvators").hide(hide);
+        $("#number-of-corporations").hide(hide);
+        $("#maximum-occupancy").hide(hide);
+        $("#business-hours").hide(hide);
+        $("#line").hide(hide);
+        $("#results").hide(hide);
     }
 
     function resetValue() {
@@ -259,3 +261,5 @@ function showHyb(){
     }
 
         //console.log(residential,commercial,corporate,hybrid,select_Type_Of_Building)
+        //
+       
