@@ -316,39 +316,39 @@
             <h3 id = "cor_selected">You selected Corporate</h3>
             <h3 id = "hyb_selected">You selected Hybrid</h3>
             <!--questions-->
-            <div id = "number-of-appartments">
+            <div id = "number-of-appartments" class="all ">
             <label>Number of appartments in the building.</label>
-            <input required type = "number" min="1" value="1" id ="appartments" /> 
+            <input required type = "number" min="1"  id ="appartments" /> 
             </div>
-            <div id = "number-of-floors">
+            <div id = "number-of-floors" class="all">
             <label>Number of floors in the building excluding basment.</label>
-            <input required type = "number" min="1" id ="floors"/>
+            <input required type = "number" min="1" id ="floors" />
             </div>
-            <div id = "number-of-basments">
+            <div id = "number-of-basments" class="all">
             <label>Number of basments in the building.</label>
             <input required type = "number" min="0" id = "basments"/>
             </div>
-            <div id="number-of-companies">
+            <div id="number-of-companies" class="all ">
             <label>Number of distint business.</label>
             <input required type = "number" min="1" id = "companies"/>
             </div>
-            <div id = "number-of-parking-spots">
+            <div id = "number-of-parking-spots" class="all">
             <label>Number of parking spaces available.</label>
             <input required type = "number" min="0" id = "parking-spots"/>
             </div>
-            <div id = "number-of-elvators">
+            <div id = "number-of-elvators" class="all">
             <label>Number of elevator cags to be deployed</label>
             <input required type = "number" min="1" id = "elvators" />
             </div>
-            <div id = "number-of-corporations">
+            <div id = "number-of-corporations" class="all ">
             <label>Number of seprate tenent companies.</label>
             <input required type = "number" min="1" id = "corporations"/>
             </div>
-            <div id = "maximum-occupancy">
+            <div id = "maximum-occupancy" class="all">
             <label>Maximum number of occupants per floor.</label>
             <input required type = "number" min="1" id = "occupancy"/>
             </div>
-            <div id = "business-hours">
+            <div id = "business-hours" class="all hybrid">
             <label>Number of hours of activity in th building(Please enter a value between 1 to 24.)</label>
             <input required type = "number" min="1" max="24" id = "hours"/>
             </div>
@@ -374,7 +374,7 @@
               </div>
               <div class = "col">
               <label ><h5>Execelium</h5></label>
-              <input type = "radio" name = "type_of_Service" class = "execlium" value = "execelium"> 
+              <input type = "radio" name = "type_of_Service" class = "execlium" value = "execelium" checked> 
               </div>
               </div>
             </div>
