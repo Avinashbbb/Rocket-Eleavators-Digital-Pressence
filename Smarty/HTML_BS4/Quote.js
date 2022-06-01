@@ -3,7 +3,7 @@ $(document).ready(function(){
 
     $(document).change(()=>{
         selectionOfBuilding();
-    });
+    })
 });
 $("#step_1").on("input",()=>{resetValue()});
 
@@ -57,6 +57,7 @@ function selectionOfBuilding (){
 //Declaring function for the selected type of building
 //for commercial building
 function com_selected(){
+    console.log("commercial")
         mainCalculation($("#elvators").val());
 }
 function res_selected(){
@@ -120,9 +121,12 @@ function mainCalculation(input){
 
 function results(){
     let res = [$("#appartments").val(),$("#floors").val(),$("#basments").val()]
-    let com =[$("floors").val(),$("#basments").val(),$("#companies").val(),$("#parking-spots").val(),$("#elvators").val()]
+    let com =[$("#floors").val(),$("#basments").val(),$("#companies").val(),$("#parking-spots").val(),$("#elvators").val()]
     let hyd =[$("#floors").val(),$("#basments").val(),$("#companies").val(),$("#parking-spots").val(),$("#occupancy").val(),$("#hours").val()]
     let cor =[$("#floors").val(),$("#basments").val(),$("#parking-spots").val(),$("#corporations").val(),$("#occupancy").val()]
+    
+    
+    //if(numberCheck )
     checking();
     function checking (){
         res = res.every(element => element)
@@ -130,6 +134,7 @@ function results(){
         hyd = hyd.every(element => element)
         cor = cor.every(element => element)
         }
+        
 
     if( res||com||hyd||cor){
         $("#elevators_needed").html(elevators_needed),
