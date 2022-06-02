@@ -139,17 +139,17 @@ function results(){
         
 
     if( res||com||hyd||cor){
-        $("#elevators_needed").html(elevators_needed),
-        $("#one_elevator").html(one_elevator.toLocaleString("en-US", {style:"currency", currency:"USD"})),
-        $("#total_evevators").html(total_evevators.toLocaleString("en-US", {style:"currency", currency:"USD"})),
-        $("#installation").html(installation.toLocaleString("en-US", {style:"currency", currency:"USD"})),
+        $("#elevator-amount").html(elevators_needed),
+        $("#elevator-unit-price").html(one_elevator.toLocaleString("en-US", {style:"currency", currency:"USD"})),
+        $("#elevator-total-price").html(total_evevators.toLocaleString("en-US", {style:"currency", currency:"USD"})),
+        $("#installation-fees").html(installation.toLocaleString("en-US", {style:"currency", currency:"USD"})),
         $("#final_price").html(final_price.toLocaleString("en-US", {style:"currency", currency:"USD"}))
     }
     else{
-        $("#elevators_needed").html("Please"),
-        $("#one_elevator").html("Enter"),
-        $("#total_evevators").html("All The"),
-        $("#installation").html("Needed"),
+        $("#elevator-amount").html("Please"),
+        $("#elevator-unit-price").html("Enter"),
+        $("#elevator-total-price").html("All The"),
+        $("#installation-fees").html("Needed"),
         $("#final_price").html("Information")
     }
 }
